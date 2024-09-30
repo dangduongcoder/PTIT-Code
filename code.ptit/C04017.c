@@ -42,19 +42,10 @@ int main() {
     }
 
 
-    for (int i = 0 ; i < n ; i ++) {
-        for (int j = 0; j <= i; j ++) {
-            if (arr[i] == arr[j]) {
-                mark[j] ++;
-                break;
-            }
-        }
-    }
-
     int c = 0;
 
     for (int i = 0 ; i < n ; i ++) {
-        if (mark[i] > 0 && nt[arr[i]] == 1) {
+        if (nt[arr[i]] == 1) {
             c++;
         }
     }
@@ -62,7 +53,7 @@ int main() {
     printf("%d ", c);
 
     for (int i = 0 ; i < n ; i ++) {
-        if (mark[i] > 0 && nt[arr[i]] == 1) {
+        if (nt[arr[i]] == 1) {
             printf("%d ", arr[i]);
         }
     }
