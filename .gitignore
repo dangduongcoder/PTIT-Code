@@ -1,2 +1,4 @@
 code.ptit/*.exe
 code.ptit/*.o
+code.ptit/.vscode/*
+code.ptit/.cph/*
