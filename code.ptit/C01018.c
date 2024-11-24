@@ -19,7 +19,6 @@ int main () {
     for (int i = 0 ; i < n ; i ++) {
         t = arr[i];
         down = (int)(sqrt(t));
-        //printf("%d", down);
         if (down * down == t) {
             printf("YES\n");
         } else {

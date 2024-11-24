@@ -1,58 +1,63 @@
 #include <stdio.h>
+#include <math.h>
 
-int check(long long n) {
+const int MAX = 1000000;
 
-    if (n <=3) {
-        return 0;
+int nt[1000000 + 3];
+
+void init() {
+
+    for (int i = 0; i <= MAX; i++)
+    {
+        nt[i] = 1;
     }
+    
+    nt[0] = 0;
+    nt[1] = 0;
 
-    int c = 0;
-
-    for (int i = 2; i * i <= n ; i ++) {
-        if (n % i == 0) {
-            if (i * i == n) {
-                c++;
-            } else {
-                c += 2;
+    for (int i = 2; i * i <= MAX; i++)
+    {
+        if (nt[i])
+        {
+            for (int j = i * i; j <= MAX; j+= i)
+            {
+                nt[j] = 0;
             }
+            
         }
     }
-
-    if (c == 1) {
-        return 1;
-    } else {
-        return 0;
-    }
-} 
-
-
-void solve() {
-
-    long long l, r;
-    scanf("%lld %lld", &l, &r);
-
-    long long c = 0;
-
-    for (long long i = l ; i <= r ; i ++) {
-        if (check(i)) {
-            c ++;
-        }
-    }
-    printf("%d\n", c);
-
 }
 
 
-int main () {
+int main() {
+
+    init();
 
     int n;
     scanf("%d", &n);
 
     while (n--)
     {
-        solve();
+        long long a, b;
+        scanf("%lld %lld", &a, &b);
+
+        int boundL = sqrt(a);
+        int boundR = sqrt(b);
+
+        int c = 0;
+
+        for (int i = boundL; i <= boundR; i++)
+        {
+            if (nt[i]) {
+                c ++;
+            }
+        }
+        
+        printf("%d\n", c);
+
     }
     
+
 
     return 0;
 }
