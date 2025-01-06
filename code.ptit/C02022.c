@@ -5,8 +5,10 @@ int main() {
     int n ;
     scanf("%d", &n);
 
-    int arr[n][n];
+    int arr[n][n]; //TẠO MA TRẬN 2 CHIỀU n x n
 
+
+    //GÁN TẤT CẢ VỊ TRÍ = -1 (-1 thì không in ra)
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
@@ -17,6 +19,8 @@ int main() {
     
     int index = 1;
 
+
+    //Đặt các giá trị vào ma trận
     for (int i = 0; i < n; i++)
     {
         if (i % 2 == 0) {
@@ -33,6 +37,7 @@ int main() {
         
     }
     
+    //in ra ma trận
 
     for (int i = 0; i < n; i++)
     {

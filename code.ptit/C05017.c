@@ -1,64 +1,90 @@
 #include <stdio.h>
 
-
-
-void solve(){
-
+void solve() {
 
     int n, m;
     scanf("%d %d", &n, &m);
 
-
-    int arr[n * m];
-
-    for (int i = 0; i < n * m; i++)
-    {
-        scanf("%d", arr[i]);
-    }
-    
     int arr[n][m];
 
-    int layer = (n > m) ? m : n;
-    int step = layer/2 * 4 + ((layer % 2 == 0) ? 0 : 1);
-
-    // printf("%d %d\n", layer, step);
-
-    int mark = 1;
-
-    while (step > 0)
-    {
-        for (int i = n - layer; i < layer; i++)
-        {
-            arr[n - layer][i] = mark;
-            mark ++ ;
+    for (int i = 0 ; i < n ; i ++) {
+        for (int j = 0 ; j < m ; j ++) {
+            scanf("%d", &arr[i][j]);
         }
-        step --;
-
-        for (int i = n - layer + 1; i < layer; i++)
-        {
-            arr[i][layer - 1] = mark;
-            mark ++ ;
-        }
-        step --;
-        for (int i = layer - 2; i >= n - layer; i--)
-        {
-            arr[layer - 1][i] = mark;
-            mark ++ ;
-        }
-        step --;        
-        for (int i = layer - 2; i >= n - layer + 1; i--)
-        {
-            arr[i][n - layer] = mark;
-            mark ++ ;
-        }
-        step --;        
-        layer --;
-
     }
 
+    int c = n * m ;
+    int d = 0; // 0 : phải, 1 xuống, 2 trái, 3 lên
+    int i = 0, j = 0;
+    int maxi = n, maxj = m, mini = 0, minj = 0;
+
+
+    while (c > 0)
+    {   
+
+        printf("%d ", arr[i][j]);
+
+        if (d == 0) {
+            if (j == maxj - 1) {
+                d = 1;
+                i ++;
+                c --;
+                continue;
+            } else { 
+                j ++;
+                c --;
+            }
+        }
+
+        if (d == 1) {
+            if (i == maxi - 1) {
+                d = 2;
+                j --;
+                c --;
+                continue;
+            } else { 
+                i ++;
+                c --;
+            }
+        }
+
+        if (d == 2) {
+            if (j == minj) {
+                d = 3;
+                i --;
+                c --;
+                continue;
+            } else { 
+                j --;
+                c --;
+            }
+        }
+
+        if (d == 3) {
+            if (i == mini + 1) {
+                d = 0;
+                j ++;
+                maxi --;
+                maxj --;
+                mini ++;
+                minj ++;
+                c --;
+                continue;
+            } else { 
+                i --;
+                c --;
+            }
+        }
+
+        
+        // c --;
+    }
+
+    printf("\n");
+     
 }
 
-int main() {
+int main () {
 
 
     int n;
@@ -69,7 +95,6 @@ int main() {
         solve();
     }
     
-
 
     return 0;
 }

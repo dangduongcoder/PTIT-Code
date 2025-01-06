@@ -16,7 +16,7 @@ void init() {
     }
 
     for (int i = 3 ; i < 10 ; i ++) {
-        gt[i] = gt[i - 1] * i;9
+        gt[i] = gt[i - 1] * i;
     }
 }
 

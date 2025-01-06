@@ -1,0 +1,2147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/favicon.png" />
+    <meta name="csrf-token" content="nD5svacHyUzYxKjjnEEDTzMADTnpjxbarrOBekjJ">
+    <title>Bài tập</title>
+    <!-- Scripts -->
+    <script src="https://code.ptit.edu.vn/js/app.js"></script>
+        <!-- Styles -->
+    <link href="https://code.ptit.edu.vn/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.ptit.edu.vn/2020/css/style.css?v=2.2.0">
+    <link rel="stylesheet" href="https://code.ptit.edu.vn/2020/font/fontas/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://code.ptit.edu.vn/2020/js/datetime/jquery.datetimepicker.css">
+
+    <!-- Default Theme (Core) -->
+    <link rel="stylesheet" href="https://code.ptit.edu.vn/2020/js/pickadate/lib/themes/default.css">
+    <!-- Default Theme (Date Picker) -->
+    <link rel="stylesheet" href="https://code.ptit.edu.vn/2020/js/pickadate/lib/themes/default.date.css">
+    <!-- Default Theme (Time Picker If Needed)-->
+    <link rel="stylesheet" href="https://code.ptit.edu.vn/2020/js/pickadate/lib/themes/default.time.css">
+
+    <!-- For RTL Layout -->
+    <link rel="stylesheet" href="https://code.ptit.edu.vn/2020/js/pickadate/lib/themes/rtl.css">
+
+</head>
+<body>
+<div class="container-fluid">
+    <!-- NAVIGATION BAR  -->
+    <div class="nav">
+        <div class="row">
+            <div class="menu__icon">
+                <a href="javascript:void(0);" onclick="clickMenu()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <div class="col-6 menu">
+                <div id="nav__menu" class="nav__menu">
+                    <div class="nav__menu__item" id="nav__logo">
+                        <a class="nav__menu__item__logo" href="/">
+                            <img src="https://code.ptit.edu.vn/2020/images/logo_ptit.png" alt="">
+                        </a>
+                    </div>
+                    <div class="nav__menu__item homepage">
+                        <a href="/">
+                            Trang chủ
+                        </a>
+                    </div>
+                                            <div class="nav__menu__item">
+                            <a href="https://code.ptit.edu.vn/student/question">
+                                Bài tập
+                            </a>
+                        </div>
+                        <div class="nav__menu__item">
+                            <a href="https://code.ptit.edu.vn/student/solution">
+                                Trạng thái
+                            </a>
+                        </div>
+                        <div class="nav__menu__item">
+                            <a href="https://code.ptit.edu.vn/student/history">
+                                Lịch sử
+                            </a>
+                        </div>
+                        <div class="nav__menu__item">
+                            <a href="https://code.ptit.edu.vn/student/ranking">
+                                Bảng xếp hạng
+                            </a>
+                        </div>
+                        <div class="nav__menu__item">
+                            <a href="https://code.ptit.edu.vn/guide">
+                                Hướng dẫn
+                            </a>
+                        </div>
+                                    </div>
+            </div>
+            <div class="col-6">
+                <div id="nav__profile" class="nav__profile">
+                    <div class="nav__profile__img nav__lang">
+                        <img onclick="toggleMenu('lang__dropdown')" src="https://code.ptit.edu.vn/2020/images/VN.png" alt="">
+                        <div class="nav__profile__menu lang__dropdown disappear">
+                            <ul>
+                                <li onclick="location.href='https://code.ptit.edu.vn/change-language/en'">
+                                    <img src="https://code.ptit.edu.vn/2020/images/Eng.png" alt=""> English
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                                                            <div class="nav__profile__img nav__profile__user">
+
+                                                <img class="nav__profile__avatar" onclick="toggleMenu('profile__dropdown')" src="https://cdn-icpc.ptit.edu.vn/ptitcode/profile/iwpP5dxAKyV4tCqMXmyPQXIxsMNoFkXAq5V45Tng.jpg" alt="">
+                        <div class="nav__profile__menu profile__dropdown disappear">
+                            <ul>
+                                <li>
+                                    <p class="nav__profile__menu__name">Trương Đăng Dương</p>
+                                    <p class="nav__profile__menu__code">B24DCCE071</p>
+                                </li>
+                                <li><a href="https://code.ptit.edu.vn/user/profile">Hồ sơ</a></li>
+                                                                                                <li><a href="https://code.ptit.edu.vn/student/courses">Lớp học</a></li>
+                                                                                                <li><a href="https://code.ptit.edu.vn/logout"
+                                   onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Đăng xuất
+                                </a>
+                                    <form id="logout-form" action="https://code.ptit.edu.vn/logout" method="POST" style="display: none;">
+                                        <input type="hidden" name="_token" value="nD5svacHyUzYxKjjnEEDTzMADTnpjxbarrOBekjJ">                                    </form>
+                                </li>
+                                                            </ul>
+                        </div>
+                        <button onclick="toggleMenu('profile__dropdown')">
+                            <i class="fa fa-caret-down" aria-hidden="true" ></i>
+                        </button>
+                    </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+        <div class="wrapper">
+        <div class="main--fluid">
+                <div class="status">
+        <div class="ques__nav__top">
+            <span class="ques__nav__title">Bài tập</span>
+            <form action="" class="ques__nav__form">
+                <input type="text" name="s" id="" placeholder="Tìm theo mã, tiêu đề">
+                <input type="submit" value="/">
+                <button type="submit">
+                    <svg id="Group_10991" data-name="Group 10991" xmlns="http://www.w3.org/2000/svg" width="24.004" height="24.004" viewBox="0 0 24.004 24.004">
+                        <g id="Rectangle_325" data-name="Rectangle 325" fill="none" stroke="#bb2019" stroke-width="1.5">
+                            <rect width="24.004" height="24.004" rx="3" stroke="none"/>
+                            <rect x="0.75" y="0.75" width="22.504" height="22.504" rx="2.25" fill="none"/>
+                        </g>
+                        <line id="Line_72" data-name="Line 72" x1="11" y2="15" transform="translate(6.502 4.502)" fill="none" stroke="#bb2019" stroke-width="1.5"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+                    <div class="ques__nav__bottom">
+                <div class="custom__nav__select">
+                    <div class="custom-select select__subject">
+                        <select id="course" name="course" class="form-control"
+                                onchange="(window.location = '?course=' + this.options[this.selectedIndex].value);">
+                                                                                                <option disabled>Học kỳ 1 năm học 2024 - 2025</option>
+                                                                <option selected value="815">Introduction to Computing and Programming - Nhóm 02</option>
+                                                    </select>
+                    </div>
+                </div>
+            </div>
+                                    <div class="ques__table__wrapper">
+                                                <table class="ques__table">
+                    <thead>
+                    <tr class="ques__table__head">
+                                                <th></th>
+                                                <th class="text--middle">STT</th>
+                        <th>
+                            <a href="https://code.ptit.edu.vn/student/question?order=desc&amp;by=code"><i
+                                    class="fa fa-fw fa-sort"></i></a>Mã</th>
+                        <th>
+                            <a href="https://code.ptit.edu.vn/student/question?order=desc&amp;by=name"><i
+                                    class="fa fa-fw fa-sort"></i></a>Tiêu đề</th>
+                        <th>
+                            Nhóm
+                        </th>
+                        <th>
+                            <span>Chủ đề con</span>
+                            <div class="filter">
+                                <div class=" filter__dropdown disappear">
+                                    <form action="" method="GET">
+                                    <ul>
+                                        <li>
+                                            <div class="checkbox--block">
+
+                                                <label class="cb__label" for="noti__checkbox">Lọc <i class="fa fa-filter" aria-hidden="true"></i></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <div class="checkbox--block">
+                                                <input type="checkbox" name="sub_group[]" id="0" value="0" class="checkbox--red">
+                                                <label class="cb__label" for="0">Tất cả</label>
+                                            </div>
+                                        </li>
+                                                                                                                        <li>
+                                            <div class="checkbox--block">
+                                                <input type="checkbox" name="sub_group[]" id="124" value="124"  class="checkbox--red">
+                                                <label class="cb__label" for="124">Data types and operations</label>
+                                            </div>
+                                        </li>
+                                                                                                                                                                <li>
+                                            <div class="checkbox--block">
+                                                <input type="checkbox" name="sub_group[]" id="125" value="125"  class="checkbox--red">
+                                                <label class="cb__label" for="125">Loops</label>
+                                            </div>
+                                        </li>
+                                                                                                                                                                <li>
+                                            <div class="checkbox--block">
+                                                <input type="checkbox" name="sub_group[]" id="126" value="126"  class="checkbox--red">
+                                                <label class="cb__label" for="126">Functions</label>
+                                            </div>
+                                        </li>
+                                                                                                                                                                <li>
+                                            <div class="checkbox--block">
+                                                <input type="checkbox" name="sub_group[]" id="127" value="127"  class="checkbox--red">
+                                                <label class="cb__label" for="127">One-dimensional Arrays</label>
+                                            </div>
+                                        </li>
+                                                                                                                                                                <li>
+                                            <div class="checkbox--block">
+                                                <input type="checkbox" name="sub_group[]" id="128" value="128"  class="checkbox--red">
+                                                <label class="cb__label" for="128">Two-dimensional Arrays</label>
+                                            </div>
+                                        </li>
+                                                                                                                                                                <li>
+                                            <div class="checkbox--block">
+                                                <input type="checkbox" name="sub_group[]" id="129" value="129"  class="checkbox--red">
+                                                <label class="cb__label" for="129">Strings</label>
+                                            </div>
+                                        </li>
+                                                                                                                                                                <li>
+                                            <div class="checkbox--block">
+                                                <input type="checkbox" name="sub_group[]" id="179" value="179"  class="checkbox--red">
+                                                <label class="cb__label" for="179">Struct</label>
+                                            </div>
+                                        </li>
+                                                                                                                    </ul>
+                                    <ul>
+                                        <li class="filter__dropdown__btn__wrapper">
+                                            <button type="submit" class="filter__dropdown__btn">
+                                                Lọc
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    </form>
+                                </div>
+                                <button onclick="$('.filter__dropdown').toggleClass('disappear').toggleClass('appear')">
+                                    <i class="fa fa-filter" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th class="text--middle">
+                            <a href="https://code.ptit.edu.vn/student/question?order=desc&amp;by=level"><i
+                                    class="fa fa-fw fa-sort-up"></i></a>Độ khó
+                        </th>
+
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">1</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01001">C01001</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01001">GẤP ĐÔI</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">2</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01002">C01002</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01002">GẤP ĐÔI 2</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">3</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01003">C01003</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01003">BÌNH PHƯƠNG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">4</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01004">C01004</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01004">GIÁ TRỊ THẬP PHÂN</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">5</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01005">C01005</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01005">TÍNH TỔNG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">6</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01006">C01006</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01006">PHÉP TOÁN CƠ BẢN 1</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">7</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01007">C01007</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01007">PHÉP TOÁN CƠ BẢN 2</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">8</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01009">C01009</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01009">CHUYỂN ĐỔI THANG ĐO NHIỆT ĐỘ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">9</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01010">C01010</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01010">CHUYỂN ĐỔI NGÀY THÁNG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">10</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01014">C01014</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01014">PHƯƠNG TRÌNH BẬC NHẤT</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">11</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01015">C01015</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01015">PHƯƠNG TRÌNH BẬC HAI</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">12</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01016">C01016</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01016">BẢNG CỬU CHƯƠNG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">13</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01018">C01018</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01018">SỐ CHÍNH PHƯƠNG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">14</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01021">C01021</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01021">TỔNG CHỮ SỐ - 1</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">15</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01022">C01022</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01022">TỔNG CHỮ SỐ - 2</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">16</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01024">C01024</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01024">BẮT ĐẦU VÀ KẾT THÚC</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">17</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01026">C01026</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01026">SỐ NGUYÊN TỐ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">18</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01027">C01027</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01027">ƯỚC SỐ CHUNG LỚN NHẤT</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">19</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01030">C01030</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01030">PHÂN TÍCH THỪA SỐ NGUYÊN TỐ 1</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">20</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01034">C01034</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01034">LIỆT KÊ SỐ CHÍNH PHƯƠNG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">21</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01036">C01036</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01036">TÍCH CHỮ SỐ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">22</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01037">C01037</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01037">TÍNH TỔNG TRONG ĐOẠN</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">23</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01038">C01038</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01038">THAY ĐỔI ĐẦU CUỐI</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">24</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01039">C01039</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01039">ĐẾM SỐ CHỮ SỐ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">25</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01040">C01040</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01040">SỐ HOÀN HẢO</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">26</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01043">C01043</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01043">SỐ STRONG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">27</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01045">C01045</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01045">CHỮ SỐ ĐẦU CUỐI</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">28</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01048">C01048</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01048">CHỮ SỐ CHẴN LẺ 1</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">29</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01049">C01049</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01049">CHỮ SỐ CHẴN LẺ 2</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">30</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01050">C01050</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01050">HÌNH CHỮ NHẬT DẤU *</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">31</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01052">C01052</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01052">ƯỚC SỐ CHIA HẾT CHO 2</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">32</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01056">C01056</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01056">SỐ KHÔNG GIẢM</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">33</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01066">C01066</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C01066">GIÁ TRỊ NHỎ NHẤT TRONG BA SỐ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">34</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02001">C02001</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02001">HÌNH VUÔNG DẤU *</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">35</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02002">C02002</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02002">HÌNH BÌNH HÀNH CÁC DẤU *</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">36</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02003">C02003</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02003">HÌNH VUÔNG RỖNG VỚI DẤU *</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">37</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02004">C02004</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02004">HÌNH BÌNH HÀNH RỖNG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">38</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02005">C02005</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02005">HÌNH BÌNH HÀNH NGƯỢC</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">39</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02006">C02006</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02006">HÌNH BÌNH HÀNH NGƯỢC - RỖNG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">40</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02007">C02007</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02007">TAM GIÁC VUÔNG TRÁI</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">41</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02008">C02008</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02008">TAM GIÁC VUÔNG TRÁI - RỖNG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">42</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02009">C02009</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02009">TAM GIÁC VUÔNG PHẢI</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">43</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02010">C02010</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02010">HÌNH CHỮ NHẬT - 1</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">44</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02011">C02011</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02011">HÌNH CHỮ NHẬT - 2</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">45</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02012">C02012</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02012">HÌNH CHỮ NHẬT - 3</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">46</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02013">C02013</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02013">HÌNH CHỮ NHẬT - 4</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">47</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02023">C02023</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02023">HÌNH CHỮ NHẬT KÝ TỰ - 1</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">48</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02024">C02024</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02024">HÌNH CHỮ NHẬT KÝ TỰ - 2</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">49</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02025">C02025</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02025">HÌNH CHỮ NHẬT KÝ TỰ - 3</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">50</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02026">C02026</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02026">HÌNH CHỮ NHẬT KÝ TỰ - 4</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">51</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02028">C02028</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02028">TAM GIÁC KÝ TỰ - 2</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">52</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02031">C02031</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C02031">TAM GIÁC KÝ TỰ - 5</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Struct</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">53</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03001">C03001</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03001">TỔNG CHỮ SỐ CHIA HẾT CHO 10</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">54</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03002">C03002</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03002">SỐ NGUYÊN TỐ NHỎ HƠN N</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">55</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03003">C03003</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03003">LIỆT KÊ N SỐ NGUYÊN TỐ ĐẦU TIÊN</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">56</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03004">C03004</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03004">ƯỚC SỐ CHUNG LỚN NHẤT – BỘI SỐ CHUNG NHỎ NHẤT</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">57</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03005">C03005</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03005">LIỆT KÊ CÁC CẶP SỐ NGUYÊN TỐ CÙNG NHAU</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">58</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03006">C03006</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03006">PHÂN TÍCH THỪA SỐ NGUYÊN TỐ 3</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">59</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03007">C03007</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03007">VỪA NGUYÊN TỐ VỪA THUẬN NGHỊCH</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">60</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03008">C03008</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03008">SỐ HOÀN HẢO NHỎ HƠN N</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">61</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03009">C03009</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03009">SỐ HOÀN HẢO TRONG ĐOẠN</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">62</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03010">C03010</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03010">SỐ STRONG NHỎ HƠN N</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">63</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03011">C03011</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03011">SỐ STRONG TRONG ĐOẠN</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">64</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03012">C03012</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03012">KIỂM TRA SỐ FIBONACCI 1</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">65</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03013">C03013</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03013">LIỆT KÊ N SỐ FIBONACCI ĐẦU TIÊN</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">66</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03014">C03014</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03014">BỘI SỐ CHUNG - ƯỚC SỐ CHUNG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">67</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03018">C03018</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03018">SỐ ĐẸP 1</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">68</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03024">C03024</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03024">SO SÁNH TỔNG CHỮ SỐ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">69</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03028">C03028</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03028">TAM GIÁC PASCAL</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">70</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03029">C03029</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03029">SỐ CHẴN ĐẶC BIỆT</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">71</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03030">C03030</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03030">SỐ KHÔNG GIẢM</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">72</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03031">C03031</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03031">CẶP SỐ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">73</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03032">C03032</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03032">ĐẾM SỐ NGUYÊN TỐ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">74</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03033">C03033</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03033">PHÂN TÍCH THỪA SỐ NGUYÊN TỐ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">75</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03034">C03034</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03034">CHIA HẾT CHO 2</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">76</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03036">C03036</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03036">SỐ THUẬN NGHỊCH LẺ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">77</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03037">C03037</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03037">ĐẾM CHỮ SỐ NGUYÊN TỐ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td></td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">78</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03040">C03040</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03040">SỐ SMITH</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">79</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03041">C03041</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03041">HÌNH VUÔNG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Data types and operations</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">80</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03042">C03042</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03042">SỐ GIẢM</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">81</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03046">C03046</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03046">CHỮ SỐ 4</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">82</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03048">C03048</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03048">SỐ ƯU THẾ CHẴN</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">83</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03049">C03049</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03049">SỐ ƯU THẾ LẺ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">84</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03050">C03050</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03050">ĐIỂM TRUNG TÂM</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">85</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03051">C03051</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03051">SỐ CHỈ CÓ BA ƯỚC SỐ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">86</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03053">C03053</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03053">CẶP SỐ NGUYÊN TỐ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">87</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03054">C03054</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03054">CẮT ĐÔI</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Loops</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">88</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03060">C03060</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03060">CHIA HẾT</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">89</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03061">C03061</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C03061">SỐ ĐẸP</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>Functions</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">90</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04001">C04001</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04001">SỐ CHẴN TRONG DÃY</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>One-dimensional Arrays</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">91</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04002">C04002</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04002">SỐ NGUYÊN TỐ TRONG DÃY</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>One-dimensional Arrays</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">92</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04003">C04003</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04003">MẢNG ĐỐI XỨNG</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>One-dimensional Arrays</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">93</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04004">C04004</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04004">SỐ FIBONACCI</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>One-dimensional Arrays</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">94</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04005">C04005</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04005">SỐ LỚN NHẤT</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>One-dimensional Arrays</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">95</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04006">C04006</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04006">ĐẢO NGƯỢC MẢNG SỐ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>One-dimensional Arrays</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">96</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04007">C04007</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04007">CHÈN MẢNG 1</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>One-dimensional Arrays</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">97</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04008">C04008</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04008">CHÈN MẢNG 2</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>One-dimensional Arrays</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">98</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04009">C04009</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04009">TÁCH CHẴN LẺ</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>One-dimensional Arrays</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">99</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04010">C04010</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04010">NHỎ NHẤT VÀ NHỎ THỨ HAI</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>One-dimensional Arrays</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                            <tr class="bg--10th">
+                                                        <td class="text--middle"><span class="ques__table__icon">&lt;/&gt;</span></td>
+                                                        <td class="text--middle">100</td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04011">C04011</a>
+                            </td>
+                            <td>
+                                <a href="https://code.ptit.edu.vn/student/question/C04011">ĐẾM SỐ PHẦN TỬ LỚN HƠN SỐ ĐỨNG TRƯỚC</a>
+                            </td>
+                            <td>Basic Programming</td>
+                            <td>One-dimensional Arrays</td>
+                            <td class="text--middle">1</td>
+
+                        </tr>
+                                        </tbody>
+                </table>
+            </div>
+                <div class="d-flex mx-auto justify-content-center">
+            <ul class="pagination">
+        
+                    <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+        
+        
+                    
+            
+            
+                                                                        <li class="page-item active"><span class="page-link">1</span></li>
+                                                                                <li class="page-item"><a class="page-link" href="https://code.ptit.edu.vn/student/question?page=2">2</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="https://code.ptit.edu.vn/student/question?page=3">3</a></li>
+                                                        
+        
+                    <li class="page-item"><a class="page-link" href="https://code.ptit.edu.vn/student/question?page=2" rel="next">&raquo;</a></li>
+            </ul>
+
+        </div>
+    </div>
+        </div>
+    </div>
+            <div class="chat__icon__wrapper">
+        <div class="chat__icon__noti" id="chat__icon__noti"><span id="chat__icon__noti__number">1</span> </div>
+        <i class="fa fa-comment-o chat__icon" aria-hidden="true" onclick="toggleChat()"></i>
+    </div>
+        </div>
+<div class="chat__panel disappear">
+    <div class="chat__panel__box">
+        <div class="chat__panel__box__head">
+            <select name="channel" id="channel">
+                                                                                                <option value="public">Chat</option>
+                                    <option value="COURSE_INT11117_CLC_02_20241">INT11117_CLC - 02</option>
+                                            </select>
+            <button class="closeBtn" onclick="toggleChat()"><i class="fa fa-times"></i></button>
+        </div>
+        <div class="chat__panel__box__body" id="chat__body">
+
+        </div>
+    </div>
+
+    <div class="chat__panel__input">
+        <form action="">
+            <div class="chat__panel__input__head">
+                <div class="chat__panel__input__head__info">
+                    <label for="to">Đến </label>
+                    <select name="to" id="rec">
+                        <option value="">Mọi người</option>
+                    </select>
+                </div>
+            </div>
+            <textarea name="" id="msg" cols="30" rows="3.5" placeholder="Nhập nội dung tin nhắn..."></textarea>
+        </form>
+    </div>
+</div>
+<script>
+    function toggleMenu(){
+        $('.nav__profile__menu').toggleClass('appear').toggleClass('disappear');
+    }
+    function close_popup(){
+        $('.main__user__welcome').addClass('disappear');
+    }
+    function customSelect(className){
+        var x, i, j, l, ll, selElmnt, a, b, c;
+        /* Look for any elements with the class "custom-select": */
+        x = document.getElementsByClassName(className);
+        l = x.length;
+        for (i = 0; i < l; i++) {
+            selElmnt = x[i].getElementsByTagName("select")[0];
+            ll = selElmnt.length;
+            /* For each element, create a new DIV that will act as the selected item: */
+            a = document.createElement("DIV");
+            a.setAttribute("class", "select-selected");
+            let name = '';
+            if (selElmnt.options[selElmnt.selectedIndex] !== undefined) {
+                name = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+            }
+            let limit;
+            if(className == "select__lang"){
+                limit = 10;
+            }else if(className == "select__subject"){
+                limit = 35;
+            }else if(className == "select__group"){
+                limit = 7;
+            }else if(className == "select__term"){
+                limit = 18;
+            }
+            if(name.length > limit){
+                name = name.substring(0, limit) + "...";
+            }
+            a.innerHTML = name;
+            x[i].appendChild(a);
+            /* For each element, create a new DIV that will contain the option list: */
+            b = document.createElement("DIV");
+            b.setAttribute("class", "select-items select-hide");
+            for (j = 0; j < ll; j++) {
+                /* For each option in the original select element,
+                create a new DIV that will act as an option item: */
+                c = document.createElement("DIV");
+                c.innerHTML = selElmnt.options[j].innerHTML;
+                if(j != selElmnt.selectedIndex){
+
+                    c.addEventListener("click", function(e) {
+                        /* When an item is clicked, update the original select box,
+                        and the selected item: */
+                        var y, i, k, s, h, sl, yl;
+                        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                        sl = s.length;
+                        h = this.parentNode.previousSibling;
+                        for (i = 0; i < sl; i++) {
+                            if (s.options[i].innerHTML == this.innerHTML) {
+                                s.selectedIndex = i;
+                                h.innerHTML = this.innerHTML;
+                                y = this.parentNode.getElementsByClassName("same-as-selected");
+                                yl = y.length;
+                                for (k = 0; k < yl; k++) {
+                                    y[k].removeAttribute("class");
+                                }
+                                this.setAttribute("class", "same-as-selected");
+                                break;
+                            }
+                        }
+                        if(className == "select__lang"){
+                            if (document.getElementById('editor')) {
+                                if(h.innerHTML == 'C/C++'){
+                                    var editor = ace.edit("editor");
+                                    editor.session.setMode("ace/mode/c_cpp");
+                                } else if(h.innerHTML == 'Java'){
+                                    var editor = ace.edit("editor");
+                                    editor.session.setMode("ace/mode/java");
+                                } else{
+                                    var editor = ace.edit("editor");
+                                    editor.session.setMode("ace/mode/python");
+                                }
+                            }
+                        }else if(className == "select__subject"){
+                            let len = selElmnt.length;
+                            for(let i = 0; i < len; i++){
+                                if(h.innerHTML == selElmnt.options[i].innerHTML){
+                                    if (!selElmnt.options[i].disabled) {
+                                        window.location = '?' + selElmnt.name + '=' + selElmnt.options[i].value;
+                                        break;
+                                    }
+                                }
+                            }
+                        }else if(className == "select__group"){
+                            let len = selElmnt.length;
+                            for(let i = 0; i < len; i++){
+                                if(h.innerHTML == selElmnt.options[i].innerHTML) {
+                                    if (!selElmnt.options[i].disabled) {
+                                        window.location = '?semester=' + selElmnt.options[selElmnt.selectedIndex].getAttribute('data-semester') + '&' + selElmnt.name + '=' + selElmnt.options[i].value;
+                                        break;
+                                    }
+                                }
+                            }
+                        }else if(className == "select__term"){
+                            let len = selElmnt.length;
+                            for(let i = 0; i < len; i++){
+                                if(h.innerHTML == selElmnt.options[i].innerHTML) {
+                                    if (!selElmnt.options[i].disabled) {
+                                        window.location = '?' + selElmnt.name + '=' + selElmnt.options[i].value;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        h.click();
+                    });
+                }
+                b.appendChild(c);
+            }
+            x[i].appendChild(b);
+            a.addEventListener("click", function(e) {
+                /* When the select box is clicked, close any other select boxes,
+                and open/close the current select box: */
+                e.stopPropagation();
+                closeAllSelect(this);
+                this.nextSibling.classList.toggle("select-hide");
+                this.classList.toggle("select-arrow-active");
+            });
+        }
+
+    }
+
+    customSelect('select__lang');
+    customSelect('select__subject');
+    customSelect('select__group');
+    customSelect('select__term');
+
+    function closeAllSelect(elmnt) {
+        /* A function that will close all select boxes in the document,
+        except the current select box: */
+        var x, y, z, i, xl, yl, zl, arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        xl = x.length;
+        yl = y.length;
+        for (i = 0; i < yl; i++) {
+            if (elmnt == y[i]) {
+                arrNo.push(i)
+            } else {
+                y[i].classList.remove("select-arrow-active");
+            }
+        }
+        for (i = 0; i < xl; i++) {
+            if (arrNo.indexOf(i)) {
+                x[i].classList.add("select-hide");
+            }
+        }
+    }
+
+    /* If the user clicks anywhere outside the select box,
+    then close all select boxes: */
+    document.addEventListener("click", closeAllSelect);
+    function popup_disappear(a){
+        let input = document.getElementsByClassName(a);
+        $(`.${a}`).addClass('disappear');
+    }
+    function toggleMenu(str){
+        if($('.' + str).data('clicked')){
+            $('.' + str).data('clicked', false);
+        }else{
+            $('.' + str).data('clicked', true);
+        }
+    }
+        $("body").click(function(){
+            var z = document.getElementsByClassName("nav__profile__menu");
+            var zl = z.length;
+            for (let i = 0; i < zl; i++) {
+                for(let j = 0; j < z[i].classList.length; j++){
+                    let str = z[i].classList.item(j);
+                    if(str.includes('dropdown')){
+                        if($('.' + str).data('clicked')){
+                            z[i].classList.toggle('appear');
+                            z[i].classList.toggle('disappear');
+                            $('.' + str).data('clicked', false);
+                            break;
+                        }else{
+                            z[i].classList.toggle('appear', false);
+                            z[i].classList.toggle('disappear', true);
+                        }
+                    }
+                }
+            }
+        });
+    function input_active(a){
+        let input = document.getElementById(a);
+        if(input.value !== ""){
+            $(`#${a}`).addClass('setting__input--active');
+        }else{
+            $(`#${a}`).removeClass('setting__input--active');
+        }
+    }
+
+    var loadFile = function(event) {
+        var image = document.getElementById('loadFileImg');
+        image.src = URL.createObjectURL(event.target.files[0]);
+        var fileReader = new FileReader();
+        fileReader.onload = function(fileLoadedEvent) {
+            var srcData = fileLoadedEvent.target.result;
+        };
+        fileReader.readAsDataURL(event.target.files[0]);
+    };
+
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js"></script>
+<script>
+    function open_chat_popup() {
+        let icon_wrapper = document.querySelector('.chat__icon__wrapper');
+        let panel = document.getElementsByClassName("chat__panel")[0];
+        $(".chat__icon").removeClass('fa-comment-o').addClass('fa-comment');
+        panel.classList.remove('disappear');
+        panel.style.right = "0vw";
+        panel.style.boxShadow = "-2px 2px 2px 2px rgba(0, 0, 0, 0.1)";
+        var elem = document.getElementById('chat__body');
+        elem.scrollTop = elem.scrollHeight;
+        new_message = 0;
+        chat_open = true;
+        localStorage.setItem("show_chat_popup", 1);
+        $('#chat__icon__noti').hide();
+    }
+
+    function close_chat_popup() {
+        let icon_wrapper = document.querySelector('.chat__icon__wrapper');
+        let panel = document.getElementsByClassName("chat__panel")[0];
+        $(".chat__icon").removeClass('fa-comment').addClass('fa-comment-o');
+        icon_wrapper.style.right = "2.5vw";
+        panel.style.right = "-30vw";
+        panel.style.boxShadow = "";
+        panel.classList.add('disappear');
+        chat_open = false;
+        localStorage.setItem("show_chat_popup", 0);
+    }
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    var chat_channel = localStorage.getItem('chat_channel') || 'public';
+
+    var channel_select = document.getElementById('channel');
+    var channel_opts = channel_select.options;
+    var chat_channel_option = [];
+    for (i = 0; i < channel_opts.length; i++) {
+        chat_channel_option.push(channel_opts[i].value);
+        if (channel_opts[i].value == chat_channel) {
+            channel_select.selectedIndex = i;
+        }
+    }
+
+    if (!chat_channel_option.includes(chat_channel)) {
+        chat_channel = chat_channel_option[0];
+    }
+    localStorage.setItem('chat_channel', chat_channel);
+
+    function update_message(data) {
+        $('#chat__body').empty();
+        data.messages.forEach(function(json_msg) {
+            html_node = '<div class="chat__message">\n' +
+                '                <div class="chat__message__inf">\n' +
+                '                    <p class="chat__message__inf__name">Từ <span class="chat__message__inf__actor" onclick="sendTo(\'' + json_msg.user.username + '\', \'' + json_msg.user.full_name + '\')">' + json_msg.user.username + ' (' + json_msg.user.full_name + ')</span> đến <span class="chat__message__inf__actor" onclick="sendTo(' + (json_msg.dest_user.username != null ? '\'' + json_msg.dest_user.username +'\'' : null) + ')">' + ((json_msg.dest_user.username != null) ? (json_msg.dest_user.username + '(' + json_msg.dest_user.full_name + ')') : json_msg.dest_user.full_name) + '</span>:</p>\n' +
+                '                    <p class="chat__message__inf__time">' + json_msg.time + '</p>\n' +
+                '                </div>\n' +
+                '                <div class="chat__message__cont">\n' +
+                '                    <p>' + json_msg.message.replace("\n", '<br />') + '</p>\n' +
+                '                </div>\n' +
+                '            </div>';
+            $('#chat__body').append(html_node);
+        });
+        $("#chat__body").scrollTop(function() { return this.scrollHeight; });
+    }
+    $('#channel').change(function() {
+        chat_channel = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: '/chat_channel',
+            dataType: "json",
+            data: {'channel': $(this).val()},
+            success: function (data) {
+                localStorage.setItem('chat_channel', chat_channel);
+                update_message(data);
+            }
+        });
+    });
+    var new_message = 1;
+    var chat_open = false;
+    var show_chat_popup = localStorage.getItem('show_chat_popup') || 0;
+    if (show_chat_popup == 1) {
+        let icon = document.querySelector('.chat__icon');
+        if(icon.classList.contains('fa-comment-o')){
+            open_chat_popup();
+        }
+    }
+
+    let toggleChat = () => {
+        let icon = document.querySelector('.chat__icon');
+        if(icon.classList.contains('fa-comment-o')){
+            open_chat_popup();
+        }else{
+            close_chat_popup();
+        }
+    };
+
+    var socket = io('https://107.zcode.edu.vn:8888');
+    socket.on('connect', function() {
+        $.ajax({
+            type: "POST",
+            url: '/chat_auth',
+            dataType: "json",
+            data: {'socket_id': socket.id, 'channel': chat_channel},
+            success:function(data){
+                $(".msg").val('');
+                update_message(data);
+            }
+        });
+    });
+    socket.on('chat message', function(msg) {
+        json_msg = msg;
+        html_node = '<div class="chat__message">\n' +
+            '                <div class="chat__message__inf">\n' +
+            '                    <p class="chat__message__inf__name">Từ <span class="chat__message__inf__actor" onclick="sendTo(\'' + json_msg.user.username + '\', \'' + json_msg.user.full_name + '\')">' + json_msg.user.username + ' (' + json_msg.user.full_name + ')</span> đến <span class="chat__message__inf__actor" onclick="sendTo(' + (json_msg.dest_user.username != null ? '\'' + json_msg.dest_user.username +'\'' : null) + ')">' + ((json_msg.dest_user.username != null) ? (json_msg.dest_user.username + '(' + json_msg.dest_user.full_name + ')') : json_msg.dest_user.full_name) + '</span>:</p>\n' +
+            '                    <p class="chat__message__inf__time">' + json_msg.time + '</p>\n' +
+            '                </div>\n' +
+            '                <div class="chat__message__cont">\n' +
+            '                    <p>' + json_msg.message.replace("\n", '<br />') + '</p>\n' +
+            '                </div>\n' +
+            '            </div>';
+        $('#chat__body').append(html_node);
+        $("#chat__body").scrollTop(function() { return this.scrollHeight; });
+        if (!chat_open) {
+            new_message++;
+            $('#chat__icon__noti__number').html(new_message);
+            $('#chat__icon__noti').show();
+        }
+    });
+    socket.on('change_channel', function(msg) {
+        chat_channel = msg;
+        $('#channel').val(chat_channel);
+        $.ajax({
+            type: "POST",
+            url: '/chat_message',
+            dataType: "json",
+            data: {'channel': chat_channel},
+            success: function (data) {
+                update_message(data);
+            }
+        });
+    });
+    $(function() {
+        $("#msg").keypress(function (e) {
+            if(e.which === 13) {
+                chat_channel = localStorage.getItem('chat_channel');
+                dest_username = $('#rec').val();
+                $.ajax({
+                    type: "POST",
+                    url: '/chat',
+                    dataType: "json",
+                    data: {'message': $(this).val(), 'username': dest_username, 'channel': chat_channel},
+                    success:function(data){
+                        $(".msg").val('');
+                    }
+                });
+                $(this).val("");
+                e.preventDefault();
+            }
+        });
+    });
+
+    let sendTo = function(username, full_name){
+        var rec = document.getElementById('rec');
+        if (username == null) {
+            rec.selectedIndex = 0;
+            return;
+        }
+        var opts = rec.options;
+        old_option = false;
+        for (var opt, j = 0; opt = opts[j]; j++) {
+            if (opt.value == username) {
+                rec.selectedIndex = j;
+                old_option = true;
+                break;
+            }
+        }
+        if (!old_option) {
+            new_option = document.createElement('option');
+            new_option.value = username;
+            if (typeof new_option.textContent === 'undefined')
+            {
+                new_option.innerText = username + ' (' + full_name + ')';
+            }
+            else
+            {
+                new_option.textContent = username + ' (' + full_name + ')';
+            }
+            rec.appendChild(new_option);
+            rec.selectedIndex = rec.options.length - 1;
+        }
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    function clickMenu() {
+        var x = document.getElementById("nav__profile");
+        if (x.className === "nav__profile") {
+            x.className += " show";
+        } else {
+            x.className = "nav__profile";
+        }
+    }
+</script>
+    </body>
+</html>

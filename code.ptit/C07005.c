@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-
-
 void solve(){
 
     double a, b, x, y, m, n;
@@ -20,8 +18,6 @@ void solve(){
     } else {
         printf("INVALID\n");
     }
-
-
 }
 
 
@@ -31,11 +27,8 @@ int main() {
     int n;
     scanf("%d", &n);
 
-    while ( n --)
-    {
-        solve();
-    }
-    
+    while ( n --) solve();
 
     return 0;
 }
+

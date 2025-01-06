@@ -4,6 +4,12 @@
         "chrono": "c",
         "random": "c",
         "limits": "c",
-        "valarray": "c"
+        "valarray": "c",
+        "stdio.h": "c",
+        "cmath": "c",
+        "complex": "c",
+        "math.h": "c",
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }

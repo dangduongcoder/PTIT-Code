@@ -1,55 +1,47 @@
-// #include <stdio.h>
-// #include <stdlib.h>
+#include <stdio.h>
 
 
+void solve() {
+
+    int n;
+    int none = 1;
+
+    scanf("%d", &n);
+
+    int arr[n];
 
 
-// void solve() {
+    for (int i = 0 ; i < n ; i ++) {
+        scanf("%d", &arr[i]);
+    }
 
-//     int n;
-//     scanf("%d", &n);
+    for (int i = 0 ; i < n - 1 && none != 0; i ++) {
+        for (int j = i + 1 ; j < n ; j ++) {
+            if (arr[i] == arr[j]) {
+                printf("%d\n", arr[i]);
+                none = 0;
+                break;
+            } 
+        }
+    }
 
-//     int arr[n];
-
-//     for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
-    
-//     int first = -1;
-//     int ok = 0;
-
-//     for (int i = 1; i < n; i++)
-//     {
-//         for (int j = 0; j < i; j++)
-//         {
-//             if (arr[i] == arr[j]) {
-//                 first = arr[i];
-//                 ok = 1;
-//                 break;
-//             }
-//         }
-//         if (ok) break;
-        
-        
-//     }
-    
-//     if (first == -1) {
-//         printf("NO\n");
-//     } else {
-//         printf("%d\n", first);
-//     }
+    if (none) {
+        printf("NO\n");
+    }
     
 
-// }
 
+}
 
-// int main() {
+int main() {
 
-//     int n;
-//     scanf("%d", &n);
+    int n;
+    scanf("%d", &n);
 
-//     while (n--)
-//     {
-//         solve();
-//     }
+    while (n--)
+    {
+        solve();
+    }
     
 
-// }
+}

@@ -6,9 +6,7 @@ void solve(int index)
     int n;
     int isF = 0;
     scanf("%d", &n);
-
     printf("%d = ", n);
-
     for (int i = 2; i <= n; i++)
     {
         int c = 0;
@@ -19,11 +17,7 @@ void solve(int index)
         }
         if (c > 0)
         {
-            if (isF)
-            {
-                printf("* ");
-            }
-            
+            if (isF) printf("* ");
             printf("%d^%d ", i, c);
             isF = 1;
         }
@@ -37,11 +31,7 @@ int main()
     int n;
     scanf("%d", &n);
 
-    for (int i = 1; i <= n; i++)
-    {
-        solve(i);
-    }
-    
-
+    for (int i = 1; i <= n; i++) solve(i);
     return 0;
 }
+

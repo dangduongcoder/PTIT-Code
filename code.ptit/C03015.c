@@ -16,9 +16,7 @@ long long calc(long long n) {
         }
     }
 
-    if (n > 1) {
-        max = n;
-    }
+    if (n > 1) max = n;
 
     return max;
 }
