@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"c:\\Users\\ADMIN\\Desktop\\Github\\PTIT-Code\\vnoj\\test.cpp","tests":[{"id":1736581653613,"input":"5 4\nqwpt\nabcf\nbvoa\nabka\nbbhb","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ADMIN\\Desktop\\Github\\PTIT-Code\\vnoj\\test.cpp","group":"local","local":true}
