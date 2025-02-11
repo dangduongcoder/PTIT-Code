@@ -1,0 +1,1 @@
+{"name":"Local: B","url":"c:\\Users\\ADMIN\\Desktop\\Github\\PTIT-Code\\codeforces\\1915\\B.cpp","tests":[{"id":1738201654398,"input":"3\nABC\nC?B\nBCA\nBCA\nCA?\nABC\n?AB\nBCA\nABC\n","output":"A\nB\nC\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ADMIN\\Desktop\\Github\\PTIT-Code\\codeforces\\1915\\B.cpp","group":"local","local":true}
