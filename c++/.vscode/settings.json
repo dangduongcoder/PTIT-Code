@@ -3,6 +3,8 @@
         "*.embeddedhtml": "html",
         "iostream": "cpp",
         "ostream": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "iosfwd": "cpp",
+        "*.tcc": "cpp"
     }
 }

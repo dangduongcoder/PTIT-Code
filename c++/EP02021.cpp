@@ -38,5 +38,11 @@ int main() {
         cout << a[i] << " ";
     }
 
+    if (k == n) {
+        for (int j = 0 ; j < m ; j ++) {
+                cout << b[j] << " ";
+            }
+    }
+
     return 0;
 }

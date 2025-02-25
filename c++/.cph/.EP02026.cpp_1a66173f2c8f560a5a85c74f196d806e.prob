@@ -1,0 +1,1 @@
+{"name":"Local: EP02026","url":"c:\\Users\\ADMIN\\Desktop\\Github\\PTIT-Code\\c++\\EP02026.cpp","tests":[{"id":1740464236163,"input":"2 3 2\n\n90 49 85 88 45 32","output":"90 49 85\n88 45 32"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ADMIN\\Desktop\\Github\\PTIT-Code\\c++\\EP02026.cpp","group":"local","local":true}
