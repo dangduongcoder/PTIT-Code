@@ -1,0 +1,1 @@
+{"name":"Local: EP01009","url":"c:\\Users\\ADMIN\\Desktop\\Github\\PTIT-Code\\c++\\EP01009.cpp","tests":[{"id":1740565096828,"input":"2\n\n2  2  3\n\n123 5  2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ADMIN\\Desktop\\Github\\PTIT-Code\\c++\\EP01009.cpp","group":"local","local":true}
