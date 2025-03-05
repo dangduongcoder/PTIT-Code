@@ -1,0 +1,1 @@
+{"name":"Local: CPP0219","url":"c:\\Users\\ADMIN\\Desktop\\Github\\PTIT-Code\\c++\\CPP0219.cpp","tests":[{"id":1741170692168,"input":"2\n2 3\n0 0 0 \n\n0 0 1\n\n3 4\n1 0 0 1 \n\n0 0 1 0 \n\n0 0 0 0","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ADMIN\\Desktop\\Github\\PTIT-Code\\c++\\CPP0219.cpp","group":"local","local":true}

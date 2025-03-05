@@ -1,0 +1,1 @@
+{"name":"Local: CPP0125","url":"c:\\Users\\ADMIN\\Desktop\\Github\\PTIT-Code\\c++\\CPP0125.cpp","tests":[{"id":1741167290728,"input":"50 0","output":"11 13 17 19 23 29 31 37 41 43 47\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ADMIN\\Desktop\\Github\\PTIT-Code\\c++\\CPP0125.cpp","group":"local","local":true}
