@@ -13,23 +13,20 @@ void solve() {
 
     int n, k;
     cin >> n >> k;
-    
-    for (int i = 2; i * i <= n; i++) {
-        while (n % i == 0) {
-            k--;
-            n /= i;
 
+    int arr[n];
 
-            if (k == 0) {
-                cout << i << endl;
-                return;
-            }
-        }
+    for (int &i : arr) {
+        cin >> i;
     }
-    
-    if (n > 1 && k == 1) cout << n << endl;
-    else cout << -1 << endl;
-    
+
+    sort(arr, arr + n);
+
+    for (int i = 0 ; i < k ; i ++) {
+        cout << arr[n - 1 - i] << " ";
+    }
+
+    cout << endl;
 
 }
 

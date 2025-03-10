@@ -11,25 +11,23 @@ const ll INF = 1e18;
 
 void solve() {
 
-    int n, k;
-    cin >> n >> k;
-    
-    for (int i = 2; i * i <= n; i++) {
-        while (n % i == 0) {
-            k--;
-            n /= i;
+    int n, t, ok = 0, res = -1;
 
+    cin >> n;
 
-            if (k == 0) {
-                cout << i << endl;
-                return;
-            }
-        }
+    set<int> se;
+
+    for (int i = 0 ; i < n ; i ++)  {
+        cin >> t;
+        if(se.count(t) >= 1 && ok == 0) {
+            res = t;
+            ok = 1;  
+        } 
+        se.insert(t);
+
     }
-    
-    if (n > 1 && k == 1) cout << n << endl;
-    else cout << -1 << endl;
-    
+
+    cout << res << endl;
 
 }
 

@@ -11,25 +11,26 @@ const ll INF = 1e18;
 
 void solve() {
 
-    int n, k;
-    cin >> n >> k;
-    
-    for (int i = 2; i * i <= n; i++) {
-        while (n % i == 0) {
-            k--;
+    int n;
+    cin >> n;
+    int no = n;
+
+    map<int, int> mp;
+
+    for(int i = 2 ; i <= no ; i ++) {
+        while (n % i == 0)
+        {
+            mp[i] ++;
             n /= i;
-
-
-            if (k == 0) {
-                cout << i << endl;
-                return;
-            }
         }
+        
     }
-    
-    if (n > 1 && k == 1) cout << n << endl;
-    else cout << -1 << endl;
-    
+
+    for (pair<int, int> p : mp) {
+        cout << p.first << " " << p.second << " ";
+    }
+
+    cout << endl;
 
 }
 

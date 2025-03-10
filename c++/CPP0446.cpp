@@ -11,25 +11,24 @@ const ll INF = 1e18;
 
 void solve() {
 
-    int n, k;
-    cin >> n >> k;
-    
-    for (int i = 2; i * i <= n; i++) {
-        while (n % i == 0) {
-            k--;
-            n /= i;
+    int n;
+    cin >> n;
 
+    int arr[n];
 
-            if (k == 0) {
-                cout << i << endl;
-                return;
-            }
+    for (int &i : arr) {
+        cin >> i;
+    }
+
+    ll mi = 1e9 + 5;
+
+    for (int i = 0 ; i < n - 1 ; i ++) {
+        for (int j = i + 1 ; j < n ; j ++) {
+            mi = (abs(mi) > abs(arr[i] + arr[j]) ? arr[i] + arr[j] : mi);
         }
     }
-    
-    if (n > 1 && k == 1) cout << n << endl;
-    else cout << -1 << endl;
-    
+
+    cout << mi << endl;
 
 }
 

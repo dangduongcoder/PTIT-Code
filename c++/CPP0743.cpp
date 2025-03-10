@@ -11,25 +11,23 @@ const ll INF = 1e18;
 
 void solve() {
 
-    int n, k;
-    cin >> n >> k;
-    
-    for (int i = 2; i * i <= n; i++) {
-        while (n % i == 0) {
-            k--;
-            n /= i;
+    string s, t;
+    getline(cin, s);
+    stringstream ss(s);
 
+    vector<string> vs;
 
-            if (k == 0) {
-                cout << i << endl;
-                return;
-            }
-        }
+    while (ss >> t)
+    {
+        vs.push_back(t);
     }
     
-    if (n > 1 && k == 1) cout << n << endl;
-    else cout << -1 << endl;
-    
+
+    for (int i = vs.size() - 1 ; i >= 0 ; i --) {
+        cout << vs[i] << " ";
+    }
+
+    cout << endl;
 
 }
 
@@ -37,6 +35,7 @@ int main() {
     fastio;
 
     int testCase; cin >> testCase;
+    cin.ignore();
 
     while (testCase --) {
         solve();

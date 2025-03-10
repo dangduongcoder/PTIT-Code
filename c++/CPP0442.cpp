@@ -10,26 +10,18 @@ const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
 void solve() {
-
-    int n, k;
+    int n, k, t;
     cin >> n >> k;
-    
-    for (int i = 2; i * i <= n; i++) {
-        while (n % i == 0) {
-            k--;
-            n /= i;
 
+    set<int> se;
 
-            if (k == 0) {
-                cout << i << endl;
-                return;
-            }
-        }
+    for (int i = 0 ; i < n ; i ++) {
+        cin >> t;
+        se.insert(t);
     }
-    
-    if (n > 1 && k == 1) cout << n << endl;
-    else cout << -1 << endl;
-    
+
+
+    cout << (se.count(k) > 0 ? 1 : -1) << endl;
 
 }
 

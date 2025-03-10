@@ -11,25 +11,26 @@ const ll INF = 1e18;
 
 void solve() {
 
-    int n, k;
-    cin >> n >> k;
-    
-    for (int i = 2; i * i <= n; i++) {
-        while (n % i == 0) {
-            k--;
-            n /= i;
+    string s;
+    cin >> s;
 
+    set<int> se;
 
-            if (k == 0) {
-                cout << i << endl;
-                return;
-            }
+    if(s[0] == '0') {
+        cout << "INVALID" << endl;
+        return;
+    }
+
+    for (char c : s) {
+        if (c <= '9' && c >= '0') {
+            se.insert(c - '0');
+        } else {
+            cout << "INVALID" << endl;
+            return;
         }
     }
-    
-    if (n > 1 && k == 1) cout << n << endl;
-    else cout << -1 << endl;
-    
+
+    cout << (se.size() == 10 ? "YES" : "NO") << endl;
 
 }
 
