@@ -14,6 +14,8 @@ void solve() {
     char a101[15] = {'A','B','B','A','D','C','C','A','B','D','C','C','A','B','D'};
     char a102[15] = {'A','C','C','A','B','C','D','D','B','B','C','D','D','B','B'};
 
+    // string a101 = "ABBADC"
+
     int md;
     cin >> md;
 
