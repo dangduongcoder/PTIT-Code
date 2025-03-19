@@ -13,41 +13,27 @@ void solve() {
 
     int n, m;
     cin >> n >> m;
-    vector<int> A1(n);
-    vector<int> A2(m);
-    for (int i = 0; i < n; i++) {
-        cin >> A1[i];
+
+    int a[n + 1], b[m + 1];
+    memset(a, 0, sizeof(a));
+    memset(b, 0, sizeof(b));
+
+    for (int i = 1; i <= n; i++) {
+        cin >> a[i];
+        a[i] += a[i - 1];
     }
-    for (int i = 0; i < m; i++) {
-        cin >> A2[i];
+
+    for (int i = 1; i <= m; i++) {
+        cin >> b[i];
+        b[i] += b[i - 1];
     }
-    int i = 0, j = 0;
-    ll sum1 = 0, sum2 = 0, total = 0;
-    while (i < n && j < m) {
-        if (A1[i] < A2[j]) {
-            sum1 += A1[i];
-            i++;
-        } else if (A2[j] < A1[i]) {
-            sum2 += A2[j];
-            j++;
-        } else {
-            total += max(sum1, sum2) + A1[i];
-            sum1 = 0;
-            sum2 = 0;
-            i++;
-            j++;
-        }
+
+    int res = 0;
+    for (int i = 1; i <= min(n, m); i++) {
+        res = max(res, max(a[i] + b[m] - b[i], b[i] + a[n] - a[i]));
     }
-    while (i < n) {
-        sum1 += A1[i];
-        i++;
-    }
-    while (j < m) {
-        sum2 += A2[j];
-        j++;
-    }
-    total += max(sum1, sum2);
-    cout << total << endl;
+
+    cout << res << endl;
 
 }
 
