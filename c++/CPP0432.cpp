@@ -9,6 +9,26 @@ typedef long long ll;
 const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
+bool cmp(int a, int b) {
+
+    string s1 = to_string(a);
+    string s2 = to_string(b);
+
+    int i = 0;
+
+    while (i < s1.size() && i < s2.size())
+    {
+        if (s1[i] != s2[i]) {
+            return s1[i] > s2[i];
+        }
+        i ++;
+    }
+
+    return true;
+    
+    
+}
+
 void solve() {
 
     int n;
@@ -20,24 +40,9 @@ void solve() {
         cin >> i;
     }
 
-    int r[n];
-    int index = 0;
+    sort(arr, arr + n, cmp);
 
-    sort(arr, arr + n);
-
-    for (int i = 0 ; i < n ; i ++) {
-        if (i % 2 == 0) {
-            r[i] = arr[index ++];
-        }
-    }
-
-    for (int i = 0 ; i < n ; i ++) {
-        if (i % 2 == 1) {
-            r[i] = arr[index ++];
-        }
-    }
-
-    for (int i : r) {
+    for (int i : arr) {
         cout << i << " ";
     }
 

@@ -20,28 +20,23 @@ void solve() {
         cin >> i;
     }
 
-    int r[n];
-    int index = 0;
+    int sum[n];
+    sum[0] = arr[0];
 
-    sort(arr, arr + n);
+    for (int i = 1 ; i < n ; i ++) {
+        sum[i] = sum[i - 1] + arr[i];
+    }
 
-    for (int i = 0 ; i < n ; i ++) {
-        if (i % 2 == 0) {
-            r[i] = arr[index ++];
+    int r = -1;
+
+    for (int i = 1 ; i < n - 1 ; i ++) {
+        if (sum[i - 1] == sum[n-1] - sum[i]) {
+            r = i + 1;
+            break;
         }
     }
 
-    for (int i = 0 ; i < n ; i ++) {
-        if (i % 2 == 1) {
-            r[i] = arr[index ++];
-        }
-    }
-
-    for (int i : r) {
-        cout << i << " ";
-    }
-
-    cout << endl;
+    cout << r << endl;
 
 }
 

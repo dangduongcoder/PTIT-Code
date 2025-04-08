@@ -10,38 +10,26 @@ const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
 void solve() {
+    int n, m;
+    cin >> n >> m;
 
-    int n;
-    cin >> n;
+    int check1[8] = {};
 
-    int arr[n];
-
-    for (int &i : arr) {
-        cin >> i;
-    }
-
-    int r[n];
-    int index = 0;
-
-    sort(arr, arr + n);
+    int arr[n][m];
 
     for (int i = 0 ; i < n ; i ++) {
-        if (i % 2 == 0) {
-            r[i] = arr[index ++];
+        for (int j = 0 ; j < m ; j ++) {
+            cin >> arr[i][j];
         }
     }
 
     for (int i = 0 ; i < n ; i ++) {
-        if (i % 2 == 1) {
-            r[i] = arr[index ++];
+        for (int j = 0 ; j < m ; j ++) {
+            
+
+
         }
     }
-
-    for (int i : r) {
-        cout << i << " ";
-    }
-
-    cout << endl;
 
 }
 
