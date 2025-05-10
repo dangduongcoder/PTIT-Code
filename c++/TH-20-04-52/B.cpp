@@ -9,28 +9,30 @@ typedef long long ll;
 const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
-void solve() {
+ll fibo[95];
 
-    int n, k;
+void init() {
 
-    cin >> n >> k;
+    fibo[0] = 0 ;
+    fibo[1] = 1 ;
+    fibo[2] = 1 ;
 
-    int l = n * n;
-
-    int arr[l];
-
-    for (int i = 0 ; i < l ; i ++) {
-        cin >> arr[i];
+    for (int i = 3 ; i < 95 ; i ++) {
+        fibo[i] = fibo[i - 1] + fibo[i - 2];
     }
 
-    sort(arr, arr + l);
+}
 
-    cout << arr[k - 1] << endl;
-
+void solve() {
+    int n;
+    cin >> n;
+    cout << fibo[n] << endl;
 }
 
 int main() {
     fastio;
+
+    init();
 
     int testCase; cin >> testCase;
 

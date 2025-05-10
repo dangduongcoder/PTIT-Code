@@ -10,22 +10,34 @@ const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
 void solve() {
-
     int n, k;
-
     cin >> n >> k;
 
-    int l = n * n;
+    vector<int> v(n);
 
-    int arr[l];
-
-    for (int i = 0 ; i < l ; i ++) {
-        cin >> arr[i];
+    for (int &i : v) {
+        cin >> i;
     }
 
-    sort(arr, arr + l);
+    int sz = 0 , b = 0 , res = 0;
 
-    cout << arr[k - 1] << endl;
+    for (int i : v) {
+        sz += i <= k;
+    }
+
+    for (int i = 0 ; i < sz ; i ++) {
+        b += v[i] > k;
+    }
+
+    res = b;
+
+    for (int i = 0, j = sz ; j < n ; i ++, j ++) {
+        b -= v[i] > k;
+        b += v[j] > k;
+        res = min(res, b);
+    }
+
+    cout << res << endl;
 
 }
 

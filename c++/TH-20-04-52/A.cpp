@@ -11,21 +11,11 @@ const ll INF = 1e18;
 
 void solve() {
 
-    int n, k;
-
+    ll n, k;
     cin >> n >> k;
 
-    int l = n * n;
+    cout << (n/k)*(k*(k-1)/2) + (n%k)*((n%k) + 1)/2 << endl;
 
-    int arr[l];
-
-    for (int i = 0 ; i < l ; i ++) {
-        cin >> arr[i];
-    }
-
-    sort(arr, arr + l);
-
-    cout << arr[k - 1] << endl;
 
 }
 

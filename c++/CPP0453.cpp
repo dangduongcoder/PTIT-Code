@@ -10,23 +10,17 @@ const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
 void solve() {
-
     int n, k;
-
     cin >> n >> k;
+    int arr[n];
 
-    int l = n * n;
-
-    int arr[l];
-
-    for (int i = 0 ; i < l ; i ++) {
-        cin >> arr[i];
+    for (int &i : arr) {
+        cin >> i;
     }
 
-    sort(arr, arr + l);
+    sort(arr, arr + n);
 
     cout << arr[k - 1] << endl;
-
 }
 
 int main() {

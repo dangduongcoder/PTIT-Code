@@ -11,21 +11,25 @@ const ll INF = 1e18;
 
 void solve() {
 
-    int n, k;
-
+    int n, k ; 
     cin >> n >> k;
 
-    int l = n * n;
+    int arr[n];
 
-    int arr[l];
-
-    for (int i = 0 ; i < l ; i ++) {
-        cin >> arr[i];
+    for (int &i : arr) {
+        cin >> i;
     }
 
-    sort(arr, arr + l);
+    sort(arr, arr + n);
 
-    cout << arr[k - 1] << endl;
+    for (int i = 0 ; i < n ; i ++) {
+        if (binary_search(arr, arr + n, arr[i] - k)) {
+            cout << 1 << endl;
+            return;
+        }
+    }
+
+    cout << -1 << endl;
 
 }
 

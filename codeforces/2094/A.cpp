@@ -11,28 +11,25 @@ const ll INF = 1e18;
 
 void solve() {
 
-    int n, k;
+    string s, t;
 
-    cin >> n >> k;
+    getline(cin, s);
+    stringstream ss(s);
 
-    int l = n * n;
-
-    int arr[l];
-
-    for (int i = 0 ; i < l ; i ++) {
-        cin >> arr[i];
+    while (ss >> t)
+    {
+        cout << t[0];
     }
+    
 
-    sort(arr, arr + l);
-
-    cout << arr[k - 1] << endl;
-
+    cout << endl;
 }
 
 int main() {
     fastio;
 
     int testCase; cin >> testCase;
+    cin.ignore();
 
     while (testCase --) {
         solve();
