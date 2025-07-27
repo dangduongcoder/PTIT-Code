@@ -73,6 +73,8 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "span": "cpp",
+        "stacktrace": "cpp"
     }
 }
