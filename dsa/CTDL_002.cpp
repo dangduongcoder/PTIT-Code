@@ -22,49 +22,51 @@ const int N = 1e9+7;
 
 void solve() {
 
-
+    int n;
+    int k;
     bool ok = true;
-    int n; cin >> n;
-
+    cin >> n >> k;
     int arr[n];
+    rep(i, 0, n) cin >> arr[i];
 
-    rep(i, 0, n) arr[i] = 0;
+    vector<vector<int>> vvi;
+    vector<int> v;
 
-    do
-    {
+    rep(i, 0, n) v.pb(0);
 
-        
-
-        rep(i, 0, n) {
-            cout << (arr[i] ? "B" : "A");
-        }
-
+    do {
+        vvi.pb(v);
         int cnt = 0;
-
-        rep(i, 0, n) cnt += arr[i];
-
+        rep(i, 0, n) cnt += v[i];
         if (cnt == n) ok = false;
-
         for (int i = n - 1 ; i >= 0 ; i --) {
-            if (arr[i] == 0) {
-                arr[i] = 1;
+            if (v[i] == 0) {
+                v[i] = 1;
                 break;
-            } else {
-                arr[i] = 0;
-            }
+            } else v[i] = 0;
         }
+    } while(ok) ;
 
-        cout << " ";
-    } while (ok);
-    
-    cout << endl;
+    int cnt = 0;
+
+    rep(i, 0, sz(vvi)) {
+        int sum = 0;
+        rep(j, 0, n) sum += arr[j] * vvi[i][j];
+        if (sum == k) {
+            rep(j, 0, n) cout << (vvi[i][j] == 1 ? to_string(arr[j]) + " " : "");
+            cout << endl;
+            cnt ++;
+        } 
+    }
+
+    cout << cnt << endl;
 
 }
 
 int main() {
     fast_io;
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--) solve();
     return 0;
 }

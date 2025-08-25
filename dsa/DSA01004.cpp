@@ -20,43 +20,50 @@ const ll LINF = 1e18;
 const int MOD = 1e9+7;
 const int N = 1e9+7;
 
+
+
 void solve() {
 
 
     bool ok = true;
-    int n; cin >> n;
+    int n, k;
+    cin >> n >> k;
 
-    int arr[n];
+    int arr[k + 1];
 
-    rep(i, 0, n) arr[i] = 0;
+    for (int i = 1 ; i < k + 1 ; i ++) {
+        arr[i] = i;
+    }
 
     do
     {
-
-        
-
-        rep(i, 0, n) {
-            cout << (arr[i] ? "B" : "A");
-        }
+        for (int i = 1 ; i < k + 1 ; i ++) cout << arr[i];
 
         int cnt = 0;
-
-        rep(i, 0, n) cnt += arr[i];
-
-        if (cnt == n) ok = false;
-
-        for (int i = n - 1 ; i >= 0 ; i --) {
-            if (arr[i] == 0) {
-                arr[i] = 1;
-                break;
-            } else {
-                arr[i] = 0;
+        for (int i = 1 ; i <= k ; i ++) {
+            if (arr[i] == n - k + i) {
+                cnt ++;
             }
         }
 
+        if (cnt == k) ok = false;
+
+
+        for (int i = k ; i > 0 ; i --) {
+            if (arr[i] < n - k + i) {
+                arr[i] ++;
+                for (int j = i + 1 ; j <= k ; j ++) {
+                    arr[j] = arr[j - 1] + 1;
+                }
+                break;
+            }
+        }
         cout << " ";
+
     } while (ok);
     
+
+
     cout << endl;
 
 }

@@ -29,15 +29,24 @@ void solve() {
     int arr[n];
 
     rep(i, 0, n) arr[i] = 0;
+    vector<string> v;
 
     do
     {
 
-        
+        bool good = true;
+        string s = "";
 
-        rep(i, 0, n) {
-            cout << (arr[i] ? "B" : "A");
+        rep(i, 0, n - 1) if (arr[i] == arr[i + 1] && arr[i] == 0) good = false;
+
+        if (good && arr[0] == 0 && arr[n - 1] == 1) {
+            // rep(i, 0, n) cout << (arr[i] ? "A" : "H");
+            rep(i, 0, n) s += (arr[i] ? "A" : "H");
+            // cout << endl;
+            v.pb(s);
         }
+
+        
 
         int cnt = 0;
 
@@ -54,10 +63,14 @@ void solve() {
             }
         }
 
-        cout << " ";
+        
     } while (ok);
     
-    cout << endl;
+    // cout << endl;
+
+    sort(all(v));
+
+    rep(i, 0, sz(v)) cout << v[i] << endl;
 
 }
 

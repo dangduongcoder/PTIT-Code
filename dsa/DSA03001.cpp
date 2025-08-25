@@ -22,42 +22,29 @@ const int N = 1e9+7;
 
 void solve() {
 
+    int coins[10] = {1, 2, 5, 10, 20, 50, 100, 200, 500, 1000};
 
-    bool ok = true;
-    int n; cin >> n;
+    int n;
 
-    int arr[n];
+    cin >> n;
 
-    rep(i, 0, n) arr[i] = 0;
+    int step = 0;
 
-    do
+    int i = 9;
+
+    while (n != 0)
     {
-
-        
-
-        rep(i, 0, n) {
-            cout << (arr[i] ? "B" : "A");
+        if (n < coins[i]) {
+            i --;
+        } else {
+            n -= coins[i];
+            step ++;
         }
+    }
 
-        int cnt = 0;
-
-        rep(i, 0, n) cnt += arr[i];
-
-        if (cnt == n) ok = false;
-
-        for (int i = n - 1 ; i >= 0 ; i --) {
-            if (arr[i] == 0) {
-                arr[i] = 1;
-                break;
-            } else {
-                arr[i] = 0;
-            }
-        }
-
-        cout << " ";
-    } while (ok);
+    cout << step << endl;
     
-    cout << endl;
+
 
 }
 

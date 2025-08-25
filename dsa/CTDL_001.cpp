@@ -22,10 +22,64 @@ const int N = 1e9+7;
 
 void solve() {
 
-
     int n;
-    cin >> n;
+    int k;
+    bool ok = true;
+    cin >> n >> k;
 
+    int arr[n];
+
+    rep(i, 0, n) cin >> arr[i];
+
+    vector<vector<int>> vvi;
+
+    vector<int> v;
+
+    rep(i, 0, n) v.pb(0);
+
+
+    do {
+
+        vvi.pb(v);
+
+        int cnt = 0;
+
+        rep(i, 0, n) cnt += v[i];
+
+        if (cnt == n) ok = false;
+
+        for (int i = n - 1 ; i >= 0 ; i --) {
+            if (v[i] == 0) {
+                v[i] = 1;
+                break;
+            } else {
+                v[i] = 0;
+            }
+        }
+
+
+    } while(ok) ;
+
+
+    rep(i, 0, sz(vvi)) {
+
+        bool ok = true;
+
+        rep(j, 0, n / 2) if (vvi[i][j] != vvi[i][n - j - 1]) {
+            ok = false;
+            break;
+        }
+
+        if (ok) {
+            rep(j, 0, n) {
+                cout << vvi[i][j] << " ";
+            }
+            cout << endl;
+        }
+
+        
+
+    }
 
 
 }

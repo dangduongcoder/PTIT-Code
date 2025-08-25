@@ -22,42 +22,32 @@ const int N = 1e9+7;
 
 void solve() {
 
-
-    bool ok = true;
-    int n; cin >> n;
+    int n;
+    cin >> n;
 
     int arr[n];
+    int inp[n];
 
-    rep(i, 0, n) arr[i] = 0;
 
-    do
-    {
+    rep(i, 0, n) cin >> inp[i];
+    rep(i, 0, n) arr[i] = i + 1;
 
-        
+    int cnt = 1;
 
+    do {
+        bool ok = true;
         rep(i, 0, n) {
-            cout << (arr[i] ? "B" : "A");
-        }
-
-        int cnt = 0;
-
-        rep(i, 0, n) cnt += arr[i];
-
-        if (cnt == n) ok = false;
-
-        for (int i = n - 1 ; i >= 0 ; i --) {
-            if (arr[i] == 0) {
-                arr[i] = 1;
+            if (inp[i] != arr[i]) {
+                ok = false;
                 break;
-            } else {
-                arr[i] = 0;
-            }
+            } 
+        } 
+        if (ok) {
+            cout << cnt << endl;
+        }  else {
+            cnt ++;
         }
-
-        cout << " ";
-    } while (ok);
-    
-    cout << endl;
+    } while (next_permutation(arr, arr + n));
 
 }
 

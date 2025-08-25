@@ -24,7 +24,7 @@ void solve() {
 
 
     bool ok = true;
-    int n; cin >> n;
+    int n, k; cin >> n >> k;
 
     int arr[n];
 
@@ -33,11 +33,19 @@ void solve() {
     do
     {
 
-        
+        int bits = 0;
 
-        rep(i, 0, n) {
-            cout << (arr[i] ? "B" : "A");
+        rep(i, 0, n) bits += arr[i];
+
+        if (bits == k) {
+            rep(i, 0, n) {
+                cout << (arr[i]);
+            }
+            cout << endl;
         }
+
+
+        
 
         int cnt = 0;
 
@@ -54,10 +62,10 @@ void solve() {
             }
         }
 
-        cout << " ";
+        
     } while (ok);
     
-    cout << endl;
+    // cout << endl;
 
 }
 

@@ -22,41 +22,25 @@ const int N = 1e9+7;
 
 void solve() {
 
+    int n;
+    cin >> n;
 
-    bool ok = true;
-    int n; cin >> n;
+    int cnt[10];
+    memset(cnt, 0, sizeof(cnt));
 
-    int arr[n];
+    rep(i, 0, n) {
+        string s;
+        cin >> s;
 
-    rep(i, 0, n) arr[i] = 0;
-
-    do
-    {
-
-        
-
-        rep(i, 0, n) {
-            cout << (arr[i] ? "B" : "A");
+        for (char a : s) {
+            cnt[a - '0']++;
         }
+    }
 
-        int cnt = 0;
+    rep(i, 0, 10) {
+        if (cnt[i] > 0) cout << i << " ";
+    }
 
-        rep(i, 0, n) cnt += arr[i];
-
-        if (cnt == n) ok = false;
-
-        for (int i = n - 1 ; i >= 0 ; i --) {
-            if (arr[i] == 0) {
-                arr[i] = 1;
-                break;
-            } else {
-                arr[i] = 0;
-            }
-        }
-
-        cout << " ";
-    } while (ok);
-    
     cout << endl;
 
 }

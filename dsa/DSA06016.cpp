@@ -22,42 +22,24 @@ const int N = 1e9+7;
 
 void solve() {
 
+    int n, m;
+    cin >> n >> m;
 
-    bool ok = true;
-    int n; cin >> n;
+    ll __max = -1, __min = LINF; 
 
-    int arr[n];
+    rep(i, 0, n) {
+        ll t; cin >> t;
+        __max = max(__max, t);
+    };
 
-    rep(i, 0, n) arr[i] = 0;
+    rep(i, 0, m) {
+        ll t; cin >> t;
+        __min = min(__min, t);
+    };
 
-    do
-    {
+    cout << __min * __max << endl;
 
-        
 
-        rep(i, 0, n) {
-            cout << (arr[i] ? "B" : "A");
-        }
-
-        int cnt = 0;
-
-        rep(i, 0, n) cnt += arr[i];
-
-        if (cnt == n) ok = false;
-
-        for (int i = n - 1 ; i >= 0 ; i --) {
-            if (arr[i] == 0) {
-                arr[i] = 1;
-                break;
-            } else {
-                arr[i] = 0;
-            }
-        }
-
-        cout << " ";
-    } while (ok);
-    
-    cout << endl;
 
 }
 

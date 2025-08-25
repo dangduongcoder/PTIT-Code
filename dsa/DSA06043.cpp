@@ -23,41 +23,29 @@ const int N = 1e9+7;
 void solve() {
 
 
-    bool ok = true;
-    int n; cin >> n;
+    int n;
+    cin >> n;
 
     int arr[n];
 
-    rep(i, 0, n) arr[i] = 0;
+    rep(i, 0, n) cin >> arr[i];
 
-    do
-    {
+    int cnt[n];
 
-        
+    cnt[0] = arr[0];
 
-        rep(i, 0, n) {
-            cout << (arr[i] ? "B" : "A");
+    rep(i, 1, n) cnt[i] = arr[i] + cnt[i - 1];
+
+    rep(i, 1, n - 1) {
+        if (cnt[i - 1] == (cnt[n - 1] - cnt[i])) {
+            cout << i + 1 << endl;
+            return;
         }
+    }
 
-        int cnt = 0;
+    cout << -1 << endl;
 
-        rep(i, 0, n) cnt += arr[i];
 
-        if (cnt == n) ok = false;
-
-        for (int i = n - 1 ; i >= 0 ; i --) {
-            if (arr[i] == 0) {
-                arr[i] = 1;
-                break;
-            } else {
-                arr[i] = 0;
-            }
-        }
-
-        cout << " ";
-    } while (ok);
-    
-    cout << endl;
 
 }
 
