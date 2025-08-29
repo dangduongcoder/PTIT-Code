@@ -1,0 +1,1 @@
+{"name":"Local: DSA07002","url":"/home/duong/Desktop/Github/PTIT-Code/dsa/DSA07002.cpp","tests":[{"id":1756475054438,"input":"9\n\nPUSH 1\n\nPUSH 2\n\nPOP\n\nPRINT\n\nPUSH 3\n\nPRINT\n\nPOP\n\nPOP\n\nPRINT","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/duong/Desktop/Github/PTIT-Code/dsa/DSA07002.cpp","group":"local","local":true}
