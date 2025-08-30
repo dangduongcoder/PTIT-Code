@@ -22,32 +22,33 @@ const int INF = 1e9;
 const ll LLINF = 1e18;
 
 void solve() {
-    int n;
-    cin >> n;
+    int v, e;
 
-    map<int, vector<int>> mp;
+    cin >> v >> e;
 
-    rep(i, 0, n) {
+    vector<vector<int>> gr(v);
+    // gr.resize(v);
+
+    rep(i, 0, e) {
         int a, b;
         cin >> a >> b;
-        mp[a].push_back(b);
+
+        gr[a - 1].push_back(b);
+        gr[b - 1].push_back(a);
     }
 
-    for(auto v : mp) {
-        int p = v.first;
-        vector<int> c = v.second;
-
-        cout << p << ": ";
-
-        rep(i, 0, sz(c)) cout << c[i] << " ";
+    rep(i, 0, sz(gr)) {
+        cout << i + 1 << ": ";
+        rep(j, 0, sz(gr[i])) cout << gr[i][j] << " ";
         cout << endl;
     }
+
 }
 
 int main() {
     fast_cin();
     int t = 1;
-    // cin >> t; 
+    cin >> t; 
     while (t--) {
         solve();
     }
