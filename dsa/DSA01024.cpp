@@ -20,30 +20,63 @@ const ll LINF = 1e18;
 const int MOD = 1e9+7;
 const int N = 1e9+7;
 
-vector<string> gray(int n) {
-    if (n == 1) return {"0", "1"};
-    vector<string> prev = gray(n - 1);
-    vector<string> res;
-    for (auto &x : prev) res.push_back("0" + x);
-    for (int i = prev.size() - 1; i >= 0; i--) res.push_back("1" + prev[i]);
-    return res;
+int n, k, vs;
+vector<string> v;
+
+void bt(int x) {
+    if (x == k - 1) {
+        cout << endl;
+        return;
+    }
+
+    if (x == 0) {
+        rep(i, x, vs - 1) {
+            cout << v[i] << " "; 
+            bt(x + 1);
+        }
+    } else {
+        rep(i, x, vs) {
+            cout << v[i] << " "; 
+            bt(x + 1);
+        }
+    }
+
 }
+
 
 void solve() {
 
-    int n;
-    cin >> n;
-    vector<string> codes = gray(n);
-    for (string s : codes) cout << s << " ";
+    cin >> n >> k;
 
-    cout << endl;
+
+    set<string> se;
+
+    string s;
+
+    rep(i, 0, n) {
+        cin >> s ;
+        se.insert(s);
+    }
+
+    for (string s: se) {
+        v.push_back(s);
+    }
+
+    vs = sz(v);
+
+    sort(all(v));
+
+    rep(i, 0, sz(v)) cout << v[i] << " ";
+
+    bt(0);
+
 
 }
 
 int main() {
     fast_io;
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--) solve();
     return 0;
 }

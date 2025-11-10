@@ -20,23 +20,45 @@ const ll LINF = 1e18;
 const int MOD = 1e9+7;
 const int N = 1e9+7;
 
-vector<string> gray(int n) {
-    if (n == 1) return {"0", "1"};
-    vector<string> prev = gray(n - 1);
-    vector<string> res;
-    for (auto &x : prev) res.push_back("0" + x);
-    for (int i = prev.size() - 1; i >= 0; i--) res.push_back("1" + prev[i]);
-    return res;
-}
-
 void solve() {
 
     int n;
     cin >> n;
-    vector<string> codes = gray(n);
-    for (string s : codes) cout << s << " ";
 
+    int arr[n];
+
+    rep(i, 0, n) cin >> arr[i];
+
+    vector<vector<int>> vvi;
+    vector<int> tmp;
+
+    rep(i, 0, n) tmp.push_back(arr[i]);
+
+    vvi.push_back(tmp);
+
+    int i = 0;
+
+    while (sz(vvi[i]) > 1)
+    {
+        vector<int> vi;
+        rep(j, 0, sz(vvi[i]) - 1) vi.push_back(vvi[i][j] + vvi[i][j + 1]);
+        vvi.push_back(vi);
+        i ++;
+    }
+
+    vector<string> res;
+
+    for(vector<int> v : vvi) {
+        string s = "[";
+        for(int i : v) s += to_string(i) + " ";
+        s[sz(s) - 1] = ']';
+        res.push_back(s);
+    }
+    reverse(all(res));
+    for(string s : res) cout << s << " ";
     cout << endl;
+    
+
 
 }
 

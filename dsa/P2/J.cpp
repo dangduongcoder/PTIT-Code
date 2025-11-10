@@ -20,30 +20,48 @@ const ll LINF = 1e18;
 const int MOD = 1e9+7;
 const int N = 1e9+7;
 
-vector<string> gray(int n) {
-    if (n == 1) return {"0", "1"};
-    vector<string> prev = gray(n - 1);
-    vector<string> res;
-    for (auto &x : prev) res.push_back("0" + x);
-    for (int i = prev.size() - 1; i >= 0; i--) res.push_back("1" + prev[i]);
-    return res;
+struct task {
+    int dl;
+    ll prof;
+};
+
+bool cmp(task a, task b) {
+    if (a.dl == b.dl) return a.prof > b.prof;
+    return a.dl < b.dl;
 }
 
 void solve() {
 
     int n;
     cin >> n;
-    vector<string> codes = gray(n);
-    for (string s : codes) cout << s << " ";
+    vector<task> tasks(n);
 
-    cout << endl;
+    rep(i, 0, n) cin >> tasks[i].dl >> tasks[i].prof;
+
+    sort(all(tasks), cmp);
+
+    priority_queue<ll, vector<ll>, greater<ll>> pq;
+
+    ll res = 0;
+
+    rep(i, 0, n) {
+        pq.push(tasks[i].prof);
+        res += tasks[i].prof;
+
+        if (sz(pq) > tasks[i].dl) {
+            res -= pq.top();
+            pq.pop();
+        }
+    }
+
+    cout << res ;
 
 }
 
 int main() {
     fast_io;
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--) solve();
     return 0;
 }

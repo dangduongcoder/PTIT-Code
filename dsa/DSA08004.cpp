@@ -20,24 +20,42 @@ const ll LINF = 1e18;
 const int MOD = 1e9+7;
 const int N = 1e9+7;
 
-vector<string> gray(int n) {
-    if (n == 1) return {"0", "1"};
-    vector<string> prev = gray(n - 1);
-    vector<string> res;
-    for (auto &x : prev) res.push_back("0" + x);
-    for (int i = prev.size() - 1; i >= 0; i--) res.push_back("1" + prev[i]);
-    return res;
-}
-
 void solve() {
 
     int n;
     cin >> n;
-    vector<string> codes = gray(n);
-    for (string s : codes) cout << s << " ";
+    string s;
+    cin >> s;
 
-    cout << endl;
+    int cnt['Z' - 'A' + 3];
 
+    memset(cnt, 0, sizeof(cnt));
+
+    for(char x : s) cnt[x - 'A'] ++;
+
+    priority_queue<ll> deq;
+
+    rep(i, 0, 27) 
+        if(cnt[i] > 0) deq.push(cnt[i]);
+
+    rep(i, 0, n) {
+        ll x = deq.top();
+        x --;
+        deq.pop();
+        if (x < 0) {
+            deq.push(0);
+        } else {
+            deq.push(x);
+        }
+    }
+
+    ll res = 0;
+
+    while(!deq.empty()) {
+        res += deq.top() * deq.top();
+        deq.pop();
+    }
+    cout << res << endl;
 }
 
 int main() {

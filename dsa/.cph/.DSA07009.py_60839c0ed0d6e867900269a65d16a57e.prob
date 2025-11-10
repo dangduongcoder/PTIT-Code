@@ -1,0 +1,1 @@
+{"name":"Local: DSA07009","url":"c:\\Users\\Dang Duong\\Desktop\\Github\\PTIT-Code\\dsa\\DSA07009.py","tests":[{"id":1761030853705,"input":"2\n231*+9-\n875*+9-","output":"AB+CD-*\nABC/-AK/L-*"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Dang Duong\\Desktop\\Github\\PTIT-Code\\dsa\\DSA07009.py","group":"local","local":true}

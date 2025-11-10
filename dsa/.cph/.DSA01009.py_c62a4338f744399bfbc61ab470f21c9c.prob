@@ -1,0 +1,1 @@
+{"name":"Local: DSA01009","url":"c:\\Users\\Dang Duong\\Desktop\\Github\\PTIT-Code\\dsa\\DSA01009.py","tests":[{"id":1759204923345,"input":"5 3","output":"5\nAAABA\nAAABB\nABAAA\nBAAAB\nBBAAA"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Dang Duong\\Desktop\\Github\\PTIT-Code\\dsa\\DSA01009.py","group":"local","local":true}

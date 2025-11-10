@@ -1,0 +1,1 @@
+{"name":"Local: 1","url":"c:\\Users\\Dang Duong\\Desktop\\Github\\PTIT-Code\\dsa\\P1\\1.py","tests":[{"id":1759641233917,"input":"3 60\n30 10\n30 20\n30 30","output":"OXXXXX\nXXXXXO\nXXXXXX"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Dang Duong\\Desktop\\Github\\PTIT-Code\\dsa\\P1\\1.py","group":"local","local":true}

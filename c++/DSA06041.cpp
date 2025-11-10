@@ -18,25 +18,33 @@ using namespace std;
 const int INF = 1e9;
 const ll LINF = 1e18;
 const int MOD = 1e9+7;
-const int N = 1e9+7;
-
-vector<string> gray(int n) {
-    if (n == 1) return {"0", "1"};
-    vector<string> prev = gray(n - 1);
-    vector<string> res;
-    for (auto &x : prev) res.push_back("0" + x);
-    for (int i = prev.size() - 1; i >= 0; i--) res.push_back("1" + prev[i]);
-    return res;
-}
+const int N = 1e5+7;
 
 void solve() {
 
     int n;
     cin >> n;
-    vector<string> codes = gray(n);
-    for (string s : codes) cout << s << " ";
 
-    cout << endl;
+    int cnt[N];
+
+    memset(cnt, 0, sizeof(cnt));
+
+    rep(i, 0, n) {
+        int a; cin >> a;
+        cnt[a] ++;
+    }
+
+    int res = -1;
+    int index = -1;
+
+    rep(i, 0, N) {
+        if (cnt[i] > n/2 && cnt[i] > res) {
+            index = i;
+            res = cnt[i];
+        }
+    }
+
+    cout << ((index == -1) ? "NO" : to_string(index)) << endl;
 
 }
 

@@ -1,0 +1,1 @@
+{"name":"Local: DSA02030","url":"c:\\Users\\Dang Duong\\Desktop\\Github\\PTIT-Code\\dsa\\DSA02030.py","tests":[{"id":1758602249655,"input":"D 2","output":"AA\nAB\nAC\nAD\nBB\nBC\nBD\nCC\nCD\nDD"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Dang Duong\\Desktop\\Github\\PTIT-Code\\dsa\\DSA02030.py","group":"local","local":true}
