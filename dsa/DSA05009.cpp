@@ -21,54 +21,66 @@ const int MOD = 1e9+7;
 const int N = 1e9+7;
 
 int n;
-int arr[107];
+long long arr[107];
 int bit[107];
+bool ok = false;
 
-int ok = false;
+long long total;            
+long long sumNeed;          
+long long prefixRemaining[107];  
+long long sum1_current = 0; 
 
 void Try(int i) {
-    if(!ok) {
-        rep(j, 0, 2) {
-            bit[i] = j;
-            
-            if (i == n - 1) {
-                ll sum1 = 0, sum2 = 0;
-                rep(k, 0, n) {
-                    if(bit[k]) sum1 += arr[k];
-                    else sum2 += arr[k];
-                }
-                if (sum1 == sum2 && sum1 != 0) {
-                    ok = true;
-                    // cout << sum1 << " " << sum2 << endl;
-                    return;
-                }
-                // cout << endl;
-            } else {
-                Try(i + 1);
-            }
-        }
+    if (ok) return;
+
+    if (sum1_current > sumNeed) return;
+
+    if (sum1_current + prefixRemaining[i] < sumNeed) return;
+
+    if (i == n) {
+        if (sum1_current == sumNeed && sum1_current != 0)
+            ok = true;
+        return;
     }
+
+    bit[i] = 1;
+    sum1_current += arr[i];
+    Try(i + 1);
+    sum1_current -= arr[i];
+
+    bit[i] = 0;
+    Try(i + 1);
 }
 
 
-
 void solve() {
-
-    ok = false;
     cin >> n;
 
+    total = 0;
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+        total += arr[i];
+    }
 
-    rep(i, 0, n) cin >> arr[i];
+    if (total % 2 != 0) {
+        cout << "NO\n";
+        return;
+    }
 
-    sort(arr, arr + n);
+    sumNeed = total / 2;
+
+    sort(arr, arr + n, greater<long long>());
+
+    prefixRemaining[n] = 0;
+    for (int i = n - 1; i >= 0; i--)
+        prefixRemaining[i] = prefixRemaining[i + 1] + arr[i];
+
+    ok = false;
+    sum1_current = 0;
 
     Try(0);
 
-    if(ok) cout << "YES";
-    else cout << "NO";
-
-    cout << endl;
-
+    cout << (ok ? "YES\n" : "NO\n");
 }
 
 int main() {
